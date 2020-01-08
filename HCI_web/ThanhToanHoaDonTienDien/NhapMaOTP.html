@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<link rel="stylesheet" type="text/css" href="../css/layout.css">
+		<script src="controllerInputOTP.js"></script>
+		<meta name="viewport" content = "width=device-width, initial-scale = 1.0">
+	</head>
+
+	<body>
+		<div class="container-main">
+			<div class="header">
+				<h1>ABC E-Banking</h1>
+			</div>	
+			
+			<!-- Navigation -->
+			<div class="navigation">
+				<!-- HOME -->
+				<button class="navigation-button">
+					<img src="../image/home.png" alt="home" style="width: 32; height: 32;">
+				</button>
+	
+				<!-- Thông tin tài khoản -->
+				<button class="navigation-button">Thông tin tài khoản</button>
+	
+				<!-- Chuyển tiền  -->
+				<div class="dropdown">
+					<button class="dropdown-button">Chuyển tiền</button>
+					<div class="dropdown-content">
+						<a href="#transfer1">Chuyển tiền ngoài hệ thống</a>
+						<a href="#transfer2">Chuyển tiền trong hệ thống</a>
+					</div>
+				</div>
+	
+				<!-- Thanh toán -->
+				<div class="dropdown">
+					<button class="dropdown-button">Thanh toán</button>
+					<div class="dropdown-content">
+						<a href="#pay1">Thanh toán hóa đơn tiền điện</a>
+						<a href="#pay2">Nộp thuế nội địa</a>
+						<a href="#pay3">Nạp tiền điện thoại</a>
+					</div>
+				</div>
+			</div>
+
+			<div class="container">
+				<div class="side">
+					<!-- my account -->
+					<div class="card">
+						<div class="card-header">
+							<img src="../image/user (1).png" alt="user">
+							<h4>My E-banking</h4>
+						</div>
+						<div class="card-body">
+							<button class="card-button">Thông tin tài khoản</button>
+							<button class="card-button">Đổi mật khẩu</button>
+							<button class="card-button">Đăng xuất</button>
+						</div>
+					</div>
+	
+					<!-- quick access -->
+					<div class="card"  style="margin-top: 15px;">
+						<div class="card-header">
+							<img src="../image/key.png" alt="key">
+								<h4>Truy cập nhanh</h4>
+						</div>
+						<div class="card-body">
+							<button class="card-button">Chuyển khoản trong hệ thống</button>
+							<button class="card-button">Chuyển khoản ngoài hệ thống</button>
+							<button class="card-button">Nạp tiền điện thoại</button>
+							<button class="card-button">Thanh toán hóa đơn tiền điện</button>
+							<button class="card-button">Nộp thuế nội địa</button>
+						</div>
+					</div>
+				</div>
+
+				<div class="main">
+					<div class="container-form">
+                        <h4>Nhập mã OTP</h4>
+                        <div class="form" style="text-align: center;">
+                            <div class="pagination">
+									<input id="text1" type="text" maxlength="1" size="1" autofocus onkeyup="keyUp(event, 1)">
+									<input id="text2" type="text" maxlength="1" size="1" onkeyup="keyUp(event, 2)">
+									<input id="text3" type="text" maxlength="1" size="1" onkeyup="keyUp(event, 3)">
+									<input id="text4" type="text" maxlength="1" size="1" onkeyup="keyUp(event, 4)">
+									<input id="text5" type="text" maxlength="1" size="1" onkeyup="keyUp(event, 5)">
+									<input id="text6" type="text" maxlength="1" size="1" onkeyup="keyUp(event,6)">
+							</div>
+
+							<p><b>Mã OTP đã được gửi đến bạn, <span style="color: red;">vui lòng nhập mã trong 60s</span></br>
+							Nhấn nút reset để gủi lại mã</b></p>
+                            
+                            <div class="container-buttons">
+                                <button type="button"
+                                class="button-submit">
+                                <img class="img-button" src="../image/refresh-button.png" alt="refresh">
+                                </button>
+                                <button type="button" style="margin-left: 540px;"
+                                class="button-submit" onClick="onFinishClick(event)">
+                                <img class="img-button" src="../image/tick.png" alt="finish"></button>
+                            </div> 
+                        </div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>

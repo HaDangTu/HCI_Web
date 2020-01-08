@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<link rel="stylesheet" type="text/css" href="../css/layout.css">
+	<link href="https://fonts.googleapis.com/css?family=Noto+Sans&display=swap" rel="stylesheet">
+	<script src="controllerMain.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.8.0/jszip.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.8.0/xlsx.js"></script>
+	<meta name="viewport" content="width=device-width, initial-scale = 1.0">
+</head>
+
+<body onload="onMainLoad()">
+	<div class="container-main">
+		<div class="header">
+			<h1>ABC E-Banking</h1>
+		</div>
+
+		<!-- Navigation -->
+		<div class="navigation">
+			<!-- HOME -->
+			<button class="navigation-button">
+				<img src="../image/home.png" alt="home" style="width: 32; height: 32;">
+			</button>
+
+			<!-- Thông tin tài khoản -->
+			<button class="navigation-button">Thông tin tài khoản</button>
+
+			<!-- Chuyển tiền  -->
+			<div class="dropdown">
+				<button class="dropdown-button">Chuyển tiền</button>
+				<div class="dropdown-content">
+					<a href="#transfer1">Chuyển tiền ngoài hệ thống</a>
+					<a href="#transfer2">Chuyển tiền trong hệ thống</a>
+				</div>
+			</div>
+
+			<!-- Thanh toán -->
+			<div class="dropdown">
+				<button class="dropdown-button">Thanh toán</button>
+				<div class="dropdown-content">
+					<a href="#pay1">Thanh toán hóa đơn tiền điện</a>
+					<a href="#pay2">Nộp thuế nội địa</a>
+					<a href="#pay3">Nạp tiền điện thoại</a>
+				</div>
+			</div>
+		</div>
+
+
+		<!-- Main -->
+		<div class="container">
+			<div class="side">
+				<!-- my account -->
+				<div class="card">
+					<div class="card-header">
+						<img src="../image/user (1).png" alt="user">
+						<h4>My E-banking</h4>
+					</div>
+					<div class="card-body">
+						<button class="card-button">Thông tin tài khoản</button>
+						<button class="card-button">Đổi mật khẩu</button>
+						<button class="card-button">Đăng xuất</button>
+					</div>
+				</div>
+
+				<!-- quick access -->
+				<div class="card" style="margin-top: 15px;">
+					<div class="card-header">
+						<img src="../image/key.png" alt="key">
+						<h4>Truy cập nhanh</h4>
+					</div>
+					<div class="card-body">
+						<button class="card-button">Chuyển khoản trong hệ thống</button>
+						<button class="card-button">Chuyển khoản ngoài hệ thống</button>
+						<button class="card-button">Nạp tiền điện thoại</button>
+						<button class="card-button">Thanh toán hóa đơn tiền điện</button>
+						<button class="card-button">Nộp thuế nội địa</button>
+					</div>
+				</div>
+			</div>
+
+			<div class="main">
+				<div class="container-form">
+					<h4>Chuyển khoản trong hệ thống</h4>
+
+					<div class="tab">
+						<button id="defaultTab" class="tab-links" onClick="openTab(event, 'transfer-one')">Chuyển cho
+							một
+							người</button>
+						<button id="transfer-more-tab" class="tab-links"
+							onClick="openTab(event, 'transfer-more')">Chuyển
+							cho nhiều người</button>
+					</div>
+
+					<!-- Chuyển cho một người -->
+					<div id="transfer-one" class="tab-content">
+						<h3 style="margin-top: 33.44px;">Thông tin người chuyển</h3>
+						<div class="form">
+							<!-- Số tài khoản người chuyển -->
+							<div class="form-field" style="margin-top: 3px;">
+								<p style="margin-left: 251.323px;">Số tài khoản</p>
+								<select id="select-transfer-account" class="combobox"
+									onChange="onSelectTransferAccountChange('select-transfer-account', 'account-balance')">
+									<option hidden="true"></option>
+									<option>011232404</option>
+									<option>011232403</option>
+									<option>011232402</option>
+								</select>
+							</div>
+
+							<!-- Số dư tài khoản chuyển -->
+							<div class="form-field">
+								<p style="margin-left: 242.183px;">Số dư hiện tại</p>
+								<p style="margin-left: 10px; color: blue;" id="account-balance"></p>
+							</div>
+						</div>
+
+						<h3>Thông tin người nhận</h3>
+						<div class="form">
+							<!-- Số tài khoản -->
+							<div class="form-field" style="margin-top: 3px;">
+								<p style="margin-left: 251.323px;">Số tài khoản</p>
+								<input id="receiver-acc" type="text" class="combobox" list="list-receive-acc"
+									onChange="onInputAccountChange()">
+								<datalist id="list-receive-acc">
+								</datalist>
+							</div>
+
+							<!-- Tên -->
+							<div class="form-field">
+								<p style="margin-left: 310.033px;">Tên</p>
+								<input id="receiver-name" type="text">
+							</div>
+
+							<!-- Lưu thông tin người nhận -->
+							<div class="form-field">
+								<p style="margin-left: 159.233px;">Lưu thông tin người nhận</p>
+								<input id="save-info" type="checkbox" onchange="onCheckboxChange()">
+							</div>
+						</div>
+
+						<h3>Thông tin giao dịch</h3>
+						<div class="form">
+							<!-- số tiền chuyển -->
+							<div class="form-field" style="margin-top: 3px;">
+								<p style="margin-left: 237.123px;">Số tiền chuyển</p>
+								<input id="transfer-amount" type="text" onkeyup="onInputKeyUp(event)">
+								<select id="select-unit" class="combobox" style="width: 60px">
+									<option>VND</option>
+									<option>USD</option>
+									<option>YEN</option>
+									<option>AUD</option>
+								</select>
+							</div>
+
+							<!-- nội dung chuyển -->
+							<div class="form-field">
+								<p style="margin-left: 221.113px;">Nội dung chuyển</p>
+								<textarea id="content" style="width: 173px"></textarea>
+							</div>
+
+							<!-- phí chuyển tiền -->
+							<div class="form-field">
+								<p style="margin-left: 230.903px;">Phí chuyển tiền</p>
+								<select id="select-transfer-fee" class="combobox">
+									<option>Người chuyển trả</option>
+									<option>Người nhận trả</option>
+								</select>
+							</div>
+						</div>
+					</div>
+
+					<!-- Chuyển cho nhiều người -->
+					<div id="transfer-more" class="tab-content">
+						<h3 style="margin-top: 33.44px;">Thông tin người chuyển</h3>
+						<div class="form">
+							<!-- Số tài khoản người chuyển -->
+							<div class="form-field">
+								<p style="margin-left:251.323px;">Số tài khoản</p>
+								<select id="select-transfer-account-more" class="combobox"
+									onChange="onSelectTransferAccountChange('select-transfer-account-more', 'acount-balance-more')">
+									<option hidden="true"></option>
+									<option>011232404</option>
+									<option>011232403</option>
+									<option>011232402</option>
+								</select>
+							</div>
+
+							<!-- Số dư tài khoản chuyển -->
+							<div class="form-field">
+								<p style="margin-bottom: 0; margin-left:242.183px;">Số dư hiện tại</p>
+								<p id="acount-balance-more" style="margin-left: 10px; 
+								color: blue; font-weight: bold; margin-bottom: 0;">
+								</p>
+							</div>
+						</div>
+
+
+						<h3>Thông tin giao dịch</h3>
+						<div class="form">
+							<div class="container-table">
+								<table class="table-transfer" id="table">
+									<tr>
+										<th>Số tài khoản</th>
+										<th>Tên</th>
+										<th>Số tiền chuyển</th>
+										<th>Phí chuyển</th>
+										<th>Nội dung chuyển</th>
+										<th>Đơn vị</th>
+									</tr>
+									<tr>
+										<!-- số tài khoản -->
+										<td><input type="text"
+												onchange="onInputChange(1)"></td>
+
+										<!-- tên -->
+										<td><input type="text"
+												onchange="onInputChange(1)"></td>
+
+										<!-- số tiền chuyển -->
+										<td><input type="text"
+												onchange="onInputChange(1)"></td>
+
+										<!-- phí chuyển -->
+										<td><select  style="width: 120px; font-size: 12px;">
+												<option>Người chuyển trả</option>
+												<option>Người nhận trả</option>
+											</select></td>
+											
+										<!-- nội dung chuyển -->
+										<td><textarea 
+												onchange="onInputChange(1)" rows="2" , cols="20" wrap="hard"
+												style="width: 200px;"></textarea></td>
+										<!-- đơn vị -->
+										<td><select>
+												<option>VND</option>
+												<option>USD</option>
+												<option>YEN</option>
+												<option>AUD</option>
+											</select></td>
+									</tr>
+								</table>
+							</div>
+							<input type="file" id="file-picker" accept=".xlsx, .xls" onChange="onChooseFileChange()">
+						</div>
+					</div>
+
+					<div class="container-buttons">
+						<button class="button-submit" onClick="onConfirmButtonClick(event)">Xác nhận</button>
+					</div>
+
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- <script>
+		document.getElementById("defaultTab").click();
+	</script> -->
+</body>
+
+</html>
