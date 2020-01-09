@@ -19,6 +19,7 @@ function onBackButtonClick(event){
 
 function onContinueButtonClick(event){
     window.open("NhapMaOTP.html", "_self");
+    sessionStorage.clear();
 }
 
 function loadPayList(payList, bills){
@@ -33,17 +34,17 @@ function loadPayList(payList, bills){
 
         var month = document.createElement("div");
         month.className = "list-field";
-        month.innerHTML = '<p>Tháng ' + bills[payList[i]].month + '</p>';
+        month.innerHTML = '<p style="color: #29B82E;">Tháng ' + bills[payList[i]].month + '</p>';
 
         var values = document.createElement("div");
         values.className = "list-field";
         values.innerHTML = 
-        '<p>Chỉ số cũ: <span style="color: blue">' + bills[payList[i]].oldValue +'</span></p>' + 
-        '<p>Chỉ số mới: <span style="color: red">' +bills[payList[i]].newValue + '</span></p>';
+        '<p style="color: #29B82E;">Chỉ số cũ: <span style="color: #0F6112">' + bills[payList[i]].oldValue +'</span></p>' + 
+        '<p style="color: #29B82E;">Chỉ số mới: <span style="color: #0F6112">' +bills[payList[i]].newValue + '</span></p>';
 
         var sumMoney = document.createElement("div");
         sumMoney.className = "list-field";
-        sumMoney.innerHTML = '<p>Tổng số tiền: <span style="color: red">' + bills[payList[i]].sumMoney.toLocaleString() + ' VND</span></p>';
+        sumMoney.innerHTML = '<p style="color: #29B82E;">Tổng số tiền: <span style="color: #0C550F">' + bills[payList[i]].sumMoney.toLocaleString() + ' VND</span></p>';
 
         listItem.appendChild(month);
         listItem.appendChild(values);

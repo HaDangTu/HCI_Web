@@ -16,7 +16,7 @@ function onConfirmLoad(){
         document.getElementById("transfer-account-id").innerHTML = sessionStorage.getItem("transfer-account");
         document.getElementById("confirm-account-balance").innerHTML = sessionStorage.getItem("account-balance");
         document.getElementById("confirm-phone-number").innerHTML = sessionStorage.getItem("phone-number");
-        document.getElementById("money").innerHTML = sessionStorage.getItem("transfer-amount") + " " + sessionStorage.getItem("unit");
+        document.getElementById("money").innerHTML = sessionStorage.getItem("transfer-amount");
         document.getElementById("confirm-suplier").innerHTML = sessionStorage.getItem("suplier");
     }
     else {
@@ -34,13 +34,13 @@ function loadTableData(data){
     for (var i = 0; i < tableData.length; i++){
         var row = table.insertRow();
         var cellSoDienThoai = row.insertCell(0);
-        cellSoDienThoai.innerHTML = '<span style="color:blue; font-weight: bold;">' + tableData[i].SoDienThoai + '</span>';
+        cellSoDienThoai.innerHTML = '<span style="color:#0F6112; font-weight: bold;">' + tableData[i].SoDienThoai + '</span>';
 
         var cellSoTien = row.insertCell(1);
-        cellSoTien.innerHTML = '<span style="color:red; font-weight: bold;">' + tableData[i].SoTien + ' VND</span>';
+        cellSoTien.innerHTML = '<span style="color:#0F6112; font-weight: bold;">' + tableData[i].SoTien + ' VND</span>';
 
         var cellNhaCungCap = row.insertCell(2);
-        cellNhaCungCap.innerHTML = tableData[i].NhaCungCap;
+        cellNhaCungCap.innerHTML = '<span style="color:#29B82E;">' + tableData[i].NhaCungCap + '</span>';
     }
 }
 

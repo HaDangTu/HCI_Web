@@ -36,19 +36,19 @@ function loadTableData(data){
     for (var i = 0; i < tableData.length; i++){
         var row = table.insertRow();
         var cellSoTaiKhoan = row.insertCell(0);
-        cellSoTaiKhoan.innerHTML = '<span style="font-weight: bold;">' + tableData[i].SoTaiKhoan + '</span>';
+        cellSoTaiKhoan.innerHTML = '<span style="color: #0F6112; font-weight: bold;">' + tableData[i].SoTaiKhoan + '</span>';
 
         var cellSoTien = row.insertCell(1);
-        cellSoTien.innerHTML = '<span style="color:blue; font-weight: bold;">' + tableData[i].Ten + '</span>';
+        cellSoTien.innerHTML = '<span style="color:#0F6112; font-weight: bold;">' + tableData[i].Ten + '</span>';
 
-        var cellSoTien = row.insertCell(2);
-        cellSoTien.innerHTML = '<span style="color:red; font-weight: bold;">' + tableData[i].SoTien + " " + tableData[i].DonVi + '</span>';
+        var cellTen = row.insertCell(2);
+        cellTen.innerHTML = '<span style="color:#1A871E; font-weight: bold;">' + tableData[i].SoTien + " " + tableData[i].DonVi + '</span>';
 
         var cellPhiChuyen = row.insertCell(3);
-        cellPhiChuyen.innerHTML = "3.300 VND";
+        cellPhiChuyen.innerHTML = '<span style="color: #29B82E";> 3.300 VND</span>';
 
         var cellNoiDung = row.insertCell(4);
-        cellNoiDung.innerHTML = tableData[i].NoiDung;
+        cellNoiDung.innerHTML = '<span style="color: #29B82E;">'+ tableData[i].NoiDung + '</span>';
     }
 }
 

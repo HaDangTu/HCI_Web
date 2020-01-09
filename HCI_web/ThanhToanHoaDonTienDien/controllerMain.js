@@ -9,7 +9,7 @@ var pay_list = [];
 function onMainLoad() {
     var soduTK = sessionStorage.getItem("account-balance");
     if (soduTK != null) {
-        document.getElementById("account-balance").innerHTML = soduTK;
+        // document.getElementById("account-balance").innerHTML = soduTK;
         document.getElementById("list-bill").style.visibility = "visible";
         loadListBill();
 
@@ -35,18 +35,18 @@ function loadListBill() {
 
         var month = document.createElement("div");
         month.className = "list-field";
-        month.innerHTML = '<p>Tháng ' + bills[i].month + '</p>';
+        month.innerHTML = '<p style="color: #29B82E">Tháng ' + bills[i].month + '</p>';
 
         var values = document.createElement("div");
         values.className = "list-field";
         values.innerHTML =
-            '<p>Chỉ số cũ: <span style="color: blue">' + bills[i].oldValue + '</span></p>' +
-            '<p>Chỉ số mới: <span style="color: red">' + bills[i].newValue + '</span></p>' +
+            '<p style="color: #29B82E;">Chỉ số cũ: <span style="color: #0F6112;">' + bills[i].oldValue + '</span></p>' +
+            '<p style="color: #29B82E;">Chỉ số mới: <span style="color: #0F6112;">' + bills[i].newValue + '</span></p>' +
             '<input id="cb' + i + '" class="pay-checkbox" type="checkbox" onchange="onCheckChange(' + i + ')">';
 
         var sumMoney = document.createElement("div");
         sumMoney.className = "list-field";
-        sumMoney.innerHTML = '<p>Tổng số tiền: <span style="color: red">' + bills[i].sumMoney.toLocaleString() + ' VND</span></p>';
+        sumMoney.innerHTML = '<p style="color: #29B82E;">Tổng số tiền: <span style="color: #0C550F;">' + bills[i].sumMoney.toLocaleString() + ' VND</span></p>';
 
         listItem.appendChild(month);
         listItem.appendChild(values);
@@ -76,7 +76,7 @@ function onSelectTransferAccountChange(idSelect, idText) {
     var moneyElement = document.getElementById(idText);
 
     if (value == "011232404") {
-        moneyElement.innerHTML = "2.000.000.000 VND";
+        moneyElement.innerHTML = "200.000.000 VND";
     }
     else if (value == "011232403") {
         moneyElement.innerHTML = "3.000.000.000 VND";

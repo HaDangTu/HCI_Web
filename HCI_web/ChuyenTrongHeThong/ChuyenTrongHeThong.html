@@ -101,7 +101,6 @@
 								<p style="margin-left: 251.323px;">Số tài khoản</p>
 								<select id="select-transfer-account" class="combobox"
 									onChange="onSelectTransferAccountChange('select-transfer-account', 'account-balance')">
-									<option hidden="true"></option>
 									<option>011232404</option>
 									<option>011232403</option>
 									<option>011232402</option>
@@ -111,7 +110,7 @@
 							<!-- Số dư tài khoản chuyển -->
 							<div class="form-field">
 								<p style="margin-left: 242.183px;">Số dư hiện tại</p>
-								<p style="margin-left: 10px; color: blue;" id="account-balance"></p>
+								<p style="margin-left: 10px;" id="account-balance">200,000,000 VND</p>
 							</div>
 						</div>
 
@@ -121,7 +120,7 @@
 							<div class="form-field" style="margin-top: 3px;">
 								<p style="margin-left: 251.323px;">Số tài khoản</p>
 								<input id="receiver-acc" type="text" class="combobox" list="list-receive-acc"
-									onChange="onInputAccountChange()">
+									onChange="onInputAccountChange()" value="012324594">
 								<datalist id="list-receive-acc">
 								</datalist>
 							</div>
@@ -129,7 +128,7 @@
 							<!-- Tên -->
 							<div class="form-field">
 								<p style="margin-left: 310.033px;">Tên</p>
-								<input id="receiver-name" type="text">
+								<input id="receiver-name" type="text" value="TuHa">
 							</div>
 
 							<!-- Lưu thông tin người nhận -->
@@ -144,7 +143,7 @@
 							<!-- số tiền chuyển -->
 							<div class="form-field" style="margin-top: 3px;">
 								<p style="margin-left: 237.123px;">Số tiền chuyển</p>
-								<input id="transfer-amount" type="text" onkeyup="onInputKeyUp(event)">
+								<input id="transfer-amount" type="text" onkeyup="onInputKeyUp(event)" value="15,000,000">
 								<select id="select-unit" class="combobox" style="width: 60px">
 									<option>VND</option>
 									<option>USD</option>
@@ -156,7 +155,7 @@
 							<!-- nội dung chuyển -->
 							<div class="form-field">
 								<p style="margin-left: 221.113px;">Nội dung chuyển</p>
-								<textarea id="content" style="width: 173px"></textarea>
+								<textarea id="content" style="width: 173px" value="Tiền học phí học kì 2"></textarea>
 							</div>
 
 							<!-- phí chuyển tiền -->
@@ -179,7 +178,6 @@
 								<p style="margin-left:251.323px;">Số tài khoản</p>
 								<select id="select-transfer-account-more" class="combobox"
 									onChange="onSelectTransferAccountChange('select-transfer-account-more', 'acount-balance-more')">
-									<option hidden="true"></option>
 									<option>011232404</option>
 									<option>011232403</option>
 									<option>011232402</option>
@@ -190,8 +188,7 @@
 							<div class="form-field">
 								<p style="margin-bottom: 0; margin-left:242.183px;">Số dư hiện tại</p>
 								<p id="acount-balance-more" style="margin-left: 10px; 
-								color: blue; font-weight: bold; margin-bottom: 0;">
-								</p>
+								 font-weight: bold; margin-bottom: 0;">200,000,000 VND</p>
 							</div>
 						</div>
 
@@ -199,7 +196,7 @@
 						<h3>Thông tin giao dịch</h3>
 						<div class="form">
 							<div class="container-table">
-								<table class="table-transfer" id="table">
+								<table class="table-transfer" id="table" >
 									<tr>
 										<th>Số tài khoản</th>
 										<th>Tên</th>
@@ -210,27 +207,211 @@
 									</tr>
 									<tr>
 										<!-- số tài khoản -->
-										<td><input type="text"
-												onchange="onInputChange(1)"></td>
+										<td><input type="text" 
+											onchange="onInputChange(1)"
+											value="007289736"></td>
 
 										<!-- tên -->
 										<td><input type="text"
-												onchange="onInputChange(1)"></td>
+												onchange="onInputChange(1)"
+												value="Le Van C"></td>
 
 										<!-- số tiền chuyển -->
 										<td><input type="text"
-												onchange="onInputChange(1)"></td>
+												onchange="onInputChange(1)"
+												value="16,000,000"></td>
 
 										<!-- phí chuyển -->
-										<td><select  style="width: 120px; font-size: 12px;">
+										<td><select style="width: 120px; font-size: 12px;">
 												<option>Người chuyển trả</option>
 												<option>Người nhận trả</option>
 											</select></td>
 											
 										<!-- nội dung chuyển -->
-										<td><textarea 
-												onchange="onInputChange(1)" rows="2" , cols="20" wrap="hard"
-												style="width: 200px;"></textarea></td>
+										<!-- <td><textarea 
+												onchange="onInputChange(1)" rows = "2" cols="20" wrap="hard"></textarea></td> -->
+										<td><input type="text" onchange="onInputChange(1)" style="width: 150px;"
+											value="Tiền lương tháng 6"/></td>
+										<!-- đơn vị -->
+										<td><select>
+												<option>VND</option>
+												<option>USD</option>
+												<option>YEN</option>
+												<option>AUD</option>
+											</select></td>
+									</tr>
+
+									<tr>
+										<!-- số tài khoản -->
+										<td><input type="text" 
+											onchange="onInputChange(1)"
+											value="007210716"></td>
+
+										<!-- tên -->
+										<td><input type="text"
+												onchange="onInputChange(1)"
+												value="Nguyễn Thi H"></td>
+
+										<!-- số tiền chuyển -->
+										<td><input type="text"
+												onchange="onInputChange(1)"
+												value="10,000,000"></td>
+
+										<!-- phí chuyển -->
+										<td><select style="width: 120px; font-size: 12px;">
+												<option>Người chuyển trả</option>
+												<option>Người nhận trả</option>
+											</select></td>
+											
+										<!-- nội dung chuyển -->
+										<!-- <td><textarea 
+												onchange="onInputChange(1)" rows = "2" cols="20" wrap="hard"></textarea></td> -->
+										<td><input type="text" onchange="onInputChange(1)" style="width: 150px;"
+											value="Tiền lương tháng 6"/></td>
+										<!-- đơn vị -->
+										<td><select>
+												<option>VND</option>
+												<option>USD</option>
+												<option>YEN</option>
+												<option>AUD</option>
+											</select></td>
+									</tr>
+
+									<tr>
+										<!-- số tài khoản -->
+										<td><input type="text" 
+											onchange="onInputChange(1)"
+											value="007123223"></td>
+
+										<!-- tên -->
+										<td><input type="text"
+												onchange="onInputChange(1)"
+												value="Trần Thị L"></td>
+
+										<!-- số tiền chuyển -->
+										<td><input type="text"
+												onchange="onInputChange(1)"
+												value="20,000,000"></td>
+
+										<!-- phí chuyển -->
+										<td><select style="width: 120px; font-size: 12px;">
+												<option>Người chuyển trả</option>
+												<option>Người nhận trả</option>
+											</select></td>
+											
+										<!-- nội dung chuyển -->
+										<!-- <td><textarea 
+												onchange="onInputChange(1)" rows = "2" cols="20" wrap="hard"></textarea></td> -->
+										<td><input type="text" onchange="onInputChange(1)" style="width: 150px;"
+											value="Tiền lương tháng 6"/></td>
+										<!-- đơn vị -->
+										<td><select>
+												<option>VND</option>
+												<option>USD</option>
+												<option>YEN</option>
+												<option>AUD</option>
+											</select></td>
+									</tr>
+
+									<tr>
+										<!-- số tài khoản -->
+										<td><input type="text" 
+											onchange="onInputChange(1)"
+											value="007123232"></td>
+
+										<!-- tên -->
+										<td><input type="text"
+												onchange="onInputChange(1)"
+												value="Đỗ Văn C"></td>
+
+										<!-- số tiền chuyển -->
+										<td><input type="text"
+												onchange="onInputChange(1)"
+												value="20,000,000"></td>
+
+										<!-- phí chuyển -->
+										<td><select style="width: 120px; font-size: 12px;">
+												<option>Người chuyển trả</option>
+												<option>Người nhận trả</option>
+											</select></td>
+											
+										<!-- nội dung chuyển -->
+										<!-- <td><textarea 
+												onchange="onInputChange(1)" rows = "2" cols="20" wrap="hard"></textarea></td> -->
+										<td><input type="text" onchange="onInputChange(1)" style="width: 150px;"
+											value="Tiền lương tháng 6"/></td>
+										<!-- đơn vị -->
+										<td><select>
+												<option>VND</option>
+												<option>USD</option>
+												<option>YEN</option>
+												<option>AUD</option>
+											</select></td>
+									</tr>
+
+									<tr>
+										<!-- số tài khoản -->
+										<td><input type="text" 
+											onchange="onInputChange(1)"
+											value="012732234"></td>
+
+										<!-- tên -->
+										<td><input type="text"
+												onchange="onInputChange(1)"
+												value="Đoàn Văn H"></td>
+
+										<!-- số tiền chuyển -->
+										<td><input type="text"
+												onchange="onInputChange(1)"
+												value="10,000,000"></td>
+
+										<!-- phí chuyển -->
+										<td><select style="width: 120px; font-size: 12px;">
+												<option>Người chuyển trả</option>
+												<option>Người nhận trả</option>
+											</select></td>
+											
+										<!-- nội dung chuyển -->
+										<!-- <td><textarea 
+												onchange="onInputChange(1)" rows = "2" cols="20" wrap="hard"></textarea></td> -->
+										<td><input type="text" onchange="onInputChange(1)" style="width: 150px;"
+											value="Tiền lương tháng 6"/></td>
+										<!-- đơn vị -->
+										<td><select>
+												<option>VND</option>
+												<option>USD</option>
+												<option>YEN</option>
+												<option>AUD</option>
+											</select></td>
+									</tr>
+
+									<tr>
+										<!-- số tài khoản -->
+										<td><input type="text" 
+											onchange="onInputChange(1)"
+											value="012237325"></td>
+
+										<!-- tên -->
+										<td><input type="text"
+												onchange="onInputChange(1)"
+												value="Trần Chí T"></td>
+
+										<!-- số tiền chuyển -->
+										<td><input type="text"
+												onchange="onInputChange(1)"
+												value="15,000,000"></td>
+
+										<!-- phí chuyển -->
+										<td><select style="width: 120px; font-size: 12px;">
+												<option>Người chuyển trả</option>
+												<option>Người nhận trả</option>
+											</select></td>
+											
+										<!-- nội dung chuyển -->
+										<!-- <td><textarea 
+												onchange="onInputChange(1)" rows = "2" cols="20" wrap="hard"></textarea></td> -->
+										<td><input type="text" onchange="onInputChange(1)" style="width: 150px;"
+											value="Tiền lương tháng 6"/></td>
 										<!-- đơn vị -->
 										<td><select>
 												<option>VND</option>

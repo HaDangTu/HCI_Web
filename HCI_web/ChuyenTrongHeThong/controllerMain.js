@@ -1,6 +1,6 @@
 var receivers_info = [
     {"account" : "012324594", "name" : "TuHa"},
-    {"account" : "011576964", "name" : "TrinhNguyen"}
+    {"account" : "011576964", "name" : "TuHa2"}
 ];
 
 var last_row = 1;
@@ -36,7 +36,7 @@ function onMainLoad() {
         }
         else {
             document.getElementById("transfer-more-tab").click();
-            document.getElementById("acount-balance-more").innerHTML = sessionStorage.getItem("acount-balance-more");
+            // document.getElementById("acount-balance-more").innerHTML = sessionStorage.getItem("acount-balance-more");
 
             var tableContent = sessionStorage.getItem("tableContent");
             var tableData = sessionStorage.getItem("tableData");
@@ -128,7 +128,7 @@ function convertValue(value, idText){
     var moneyElement = document.getElementById(idText);
 
     if (value == "011232404"){
-        moneyElement.innerHTML = "2,000,000,000 VND";
+        moneyElement.innerHTML = "200,000,000 VND";
     }
     else if (value == "011232403"){
         moneyElement.innerHTML = "3,000,000,000 VND";
@@ -178,14 +178,15 @@ function addRow(rowIndex) {
     '</select>';
 
     // cellContent.className = "table-data2";
-    cellContent.innerHTML = '<textarea onchange="onInputChange('+ (rowIndex + 1) + ')" style="width: 200px;"></textarea>';
+    // cellContent.innerHTML = '<textarea onchange="onInputChange('+ (rowIndex + 1) + ')"></textarea>';
+    cellContent.innerHTML = '<input style="width: 150px;" onchange="onInputChange('+ (rowIndex + 1) + ')"/>';
 
     // cellUnit.className = "table-data1";
     cellUnit.innerHTML = '<select>' + 
-    '<option value="VND">VND</option>' +
-    '<option value="USD">USD</option>' +
-    '<option value="YEN">YEN</option>' +
-    '<option value="AUD">AUD</option>' +
+    '<option>VND</option>' +
+    '<option>USD</option>' +
+    '<option>YEN</option>' +
+    '<option>AUD</option>' +
     '</select>';
 }
 
@@ -231,7 +232,7 @@ function onChooseFileChange(){
             
             var cellContent = row.insertCell(4);
             // cellContent.className = 'table-data2'
-            cellContent.innerHTML = '<textarea style ="width: 200px;">' + element.NoiDungChuyen + '</textarea>';
+            cellContent.innerHTML = '<input type="text" style ="width: 150px;">' + element.NoiDungChuyen + '</textarea>';
 
             var cellUnit = row.insertCell(5);
             // cellUnit.className = 'table-data1'

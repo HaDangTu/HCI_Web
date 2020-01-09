@@ -27,8 +27,7 @@ function onConfirmButtonClick(event) {
         sessionStorage.setItem("transfer-account", document.getElementById("select-transfer-account").value);
         sessionStorage.setItem("account-balance", document.getElementById("account-balance").innerHTML);
         sessionStorage.setItem("phone-number", document.getElementById("phone-number").value);
-        sessionStorage.setItem("transfer-amount", document.getElementById("transfer-amount").value);
-        sessionStorage.setItem("unit", document.getElementById("select-unit").value);
+        sessionStorage.setItem("transfer-amount", document.getElementById("select-card").value);
         sessionStorage.setItem("suplier", document.getElementById("select-suplier").value);
     }
     else {
@@ -50,13 +49,13 @@ function convertValue(value, idText) {
     var moneyElement = document.getElementById(idText);
 
     if (value == "011232404") {
-        moneyElement.innerHTML = "2.000.000.000 VND";
+        moneyElement.innerHTML = "200,000,000 VND";
     }
     else if (value == "011232403") {
-        moneyElement.innerHTML = "3.000.000.000 VND";
+        moneyElement.innerHTML = "3,000,000,000 VND";
     }
     else if (value == "011232402") {
-        moneyElement.innerHTML = "4.000.000.000 VND"
+        moneyElement.innerHTML = "4,000,000,000 VND"
     }
 }
 

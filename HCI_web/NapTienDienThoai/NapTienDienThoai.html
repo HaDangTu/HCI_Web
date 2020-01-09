@@ -101,7 +101,6 @@
                                 <p style="margin-left: 251.323px;">Số tài khoản</p>
                                 <select id="select-transfer-account" class="combobox"
                                     onChange="onSelectTransferAccountChange('select-transfer-account', 'account-balance')">
-                                    <option hidden="true"></option>
                                     <option>011232404</option>
                                     <option>011232403</option>
                                     <option>011232402</option>
@@ -111,7 +110,7 @@
                             <!-- Số dư tài khoản -->
                             <div class="form-field">
                                 <p style="margin-left: 242.183px;">Số dư hiện tại</p>
-                                <p style="margin-left: 10px;" id="account-balance"></p>
+                                <p style="margin-left: 10px;" id="account-balance">200,000,000 VND</p>
                             </div>
                         </div>
 
@@ -120,20 +119,20 @@
                             <!-- Số điện thoại -->
                             <div class="form-field" style="margin-top: 3px;">
                                 <p style="margin-left: 247.781px;">Số điện thoại</p>
-                                <input id="phone-number" type="text" class="combobox" list="list-receive-acc">
+                                <input id="phone-number" type="text" class="combobox" list="list-receive-acc" value="0396464373">
                                 <datalist id="list-phone-number">
                                 </datalist>
                             </div>
 
                             <!-- số tiền -->
-                            <div class="form-field" style="margin-top: 3px;">
+                            <div class="form-field">
                                 <p style="margin-left: 290.031px;">Số tiền</p>
-                                <input id="transfer-amount" type="text" onkeyup="onInputKeyUp(event)">
-                                <select id="select-unit" class="combobox" style="width: 60px">
-                                    <option>VND</option>
-                                    <option>USD</option>
-                                    <option>YEN</option>
-                                    <option>AUD</option>
+                                <select id="select-card" class="combobox" style="width: 111px">
+                                    <option>20,000 VND</option>
+                                    <option>50,000 VND</option>
+                                    <option>100,000 VND</option>
+                                    <option>200,000 VND</option>
+                                    <option>500,000 VND</option>
                                 </select>
                             </div>
 
@@ -165,7 +164,6 @@
                                 <p style="margin-left:251.323px;">Số tài khoản</p>
                                 <select id="select-transfer-account-more" class="combobox"
                                     onChange="onSelectTransferAccountChange('select-transfer-account-more', 'account-balance-more')">
-                                    <option hidden="true"></option>
                                     <option>011232404</option>
                                     <option>011232403</option>
                                     <option>011232402</option>
@@ -175,8 +173,8 @@
                             <!-- Số dư tài khoản chuyển -->
                             <div class="form-field">
                                 <p style="margin-bottom: 0; margin-left:242.183px;">Số dư hiện tại</p>
-                                <p id="account-balance-more" style="margin-left: 10px; color: blue; font-weight: bold; margin-bottom: 0;">
-                                </p>
+                                <p id="account-balance-more" style="margin-left: 10px; color: #29B82E; font-weight: bold; margin-bottom: 0;">
+                                    200,000,000 VND</p>
                             </div>
                         </div>
 
@@ -192,14 +190,66 @@
                                     </tr>
                                     <tr>
                                         <!-- Số điện thoại -->
-                                        <td><input type="text" onchange="onInputChange(1)"></td>
+                                        <td><input type="text" value="0915674567"></td>
                                         
                                         <!-- Số tiền -->
-                                        <td><input type="text"onchange="onInputChange(1)" onkeyup="onInputKeyUp(event)"></td>
-
+                                        <td><select style="width:100%">
+                                            <option>20,000 VND</option>
+                                            <option>50,000 VND</option>
+                                            <option>100,000 VND</option>
+                                            <option>200,000 VND</option>
+                                            <option>500,000 VND</option>
+                                        </select>
+                                        </td>
                                         <!-- Nhà cung cấp -->
                                         <!-- !IMPORTANT DO NOT REMOVE WHITESPACE BETWEEN <td> and <select> -->
-                                        <td><select style="width: 120px; font-size: 12px;">
+                                        <td><select style="width: 100%; font-size: 12px;">
+                                                <option>Viettel</option>
+                                                <option>Mobifone</option>
+                                                <option>VietnamMobile</option>
+                                                <option>Vinaphone</option>
+                                            </select></td>
+                                    </tr>
+
+                                    <tr>
+                                        <!-- Số điện thoại -->
+                                        <td><input type="text" value="0455654567"></td>
+                                        
+                                        <!-- Số tiền -->
+                                        <td><select style="width:100%">
+                                            <option>20,000 VND</option>
+                                            <option>50,000 VND</option>
+                                            <option>100,000 VND</option>
+                                            <option>200,000 VND</option>
+                                            <option>500,000 VND</option>
+                                        </select>
+                                        </td>
+                                        <!-- Nhà cung cấp -->
+                                        <!-- !IMPORTANT DO NOT REMOVE WHITESPACE BETWEEN <td> and <select> -->
+                                        <td><select style="width: 100%; font-size: 12px;">
+                                                <option>Viettel</option>
+                                                <option>Mobifone</option>
+                                                <option>VietnamMobile</option>
+                                                <option>Vinaphone</option>
+                                            </select></td>
+                                    </tr>
+
+                                    <tr>
+                                        <!-- Số điện thoại -->
+                                        <td><input type="text" value="0397758893"></td>
+                                        
+                                        <!-- Số tiền -->
+                                        <td><select style="width:100%">
+                                            <option>20,000 VND</option>
+                                            <option>50,000 VND</option>
+                                            <option>100,000 VND</option>
+                                            <option>200,000 VND</option>
+                                            <option>500,000 VND</option>
+                                        </select>
+                                        </td>
+                                        <!-- Nhà cung cấp -->
+                                        <!-- !IMPORTANT DO NOT REMOVE WHITESPACE BETWEEN <td> and <select> -->
+                                        <td><select style="width: 100%; font-size: 12px;">
                                                 <option>Viettel</option>
                                                 <option>Mobifone</option>
                                                 <option>VietnamMobile</option>
@@ -211,7 +261,7 @@
                             <div class="form-field">
                                 <input type="file" id="file-picker" accept=".xlsx, .xls"
                                     onChange="onChooseFileChange()">
-                                <p style="color: red; margin-left: 10px;">
+                                <p style="color: #0E6011; margin-left: 10px;">
                                     (*Tạo file excel với cấu trúc như bảng trên)
                                 </p>
                             </div>
