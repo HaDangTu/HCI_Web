@@ -132,7 +132,7 @@ function convertValue(value, idText){
     var moneyElement = document.getElementById(idText);
 
     if (value == "011232404"){
-        moneyElement.innerHTML = "2,000,000,000 VND";
+        moneyElement.innerHTML = "200,000,000 VND";
     }
     else if (value == "011232403"){
         moneyElement.innerHTML = "3,000,000,000 VND";

@@ -81,14 +81,14 @@
 
             <div class="main">
                 <div class="container-form">
-                    <h4>Nạp tiền điện thoại</h4>
+                    <h4>Nạp tiền ví điện tử</h4>
 
                     <div class="tab">
                         <button id="defaultTab" class="tab-links" onClick="openTab(event, 'transfer-one')">
-                            Nạp cho một số điện thoại
+                            Nạp cho một khách hàng
                         </button>
                         <button id="transfer-more-tab" class="tab-links" onClick="openTab(event, 'transfer-more')">
-                            Nạp cho nhiều số điện thoại
+                            Nạp cho nhiều khách hàng
                         </button>
                     </div>
 
@@ -118,32 +118,29 @@
                         <div class="form">
                             <!-- Số điện thoại -->
                             <div class="form-field" style="margin-top: 3px;">
-                                <p style="margin-left: 247.781px;">Số điện thoại</p>
-                                <input id="phone-number" type="text" class="combobox" list="list-receive-acc" value="0396464373">
-                                <datalist id="list-phone-number">
-                                </datalist>
+                                <p style="margin-left: 221.781px;">Mã Khách Hàng</p>
+                                <input id="phone-number" type="text" class="combobox" list="list-receive-acc" value="KH08262822">
                             </div>
 
                             <!-- số tiền -->
+
                             <div class="form-field">
                                 <p style="margin-left: 290.031px;">Số tiền</p>
-                                <select id="select-card" class="combobox" style="width: 111px">
-                                    <option>20,000 VND</option>
-                                    <option>50,000 VND</option>
-                                    <option>100,000 VND</option>
-                                    <option>200,000 VND</option>
-                                    <option>500,000 VND</option>
-                                </select>
-                            </div>
+								<input id="select-card" type="text" onkeyup="onInputKeyUp(event)" value="15,000,000">
+								<select id="select-unit" class="combobox" style="width: 60px">
+									<option>VND</option>
+									<option>USD</option>
+									<option>YEN</option>
+									<option>AUD</option>
+								</select>
+							</div>
 
-                            <!-- nhà cung cấp -->
+                            <!-- Loại Ví -->
                             <div class="form-field">
-                                <p style="margin-left: 243.344px;">Nhà cung cấp</p>
+                                <p style="margin-left: 284.344px;">Loại Ví</p>
                                 <select id="select-suplier" class="combobox">
-                                    <option>Viettel</option>
-                                    <option>Mobilephone</option>
-                                    <option>VietnamMobile</option>
-                                    <option>Vinaphone</option>
+                                    <option>MoMo</option>
+                                    <option>viettel Pay</option>
                                 </select>
                             </div>
 
@@ -184,77 +181,79 @@
                             <div class="container-table">
                                 <table class="table-transfer" id="table">
                                     <tr>
-                                        <th>Số điện thoại</th>
+                                        <th>Mã Khách Hàng</th>
                                         <th>Số tiền</th>
-                                        <th>Nhà cung cấp</th>
+                                        <th>Loại Ví</th>
+                                        <th>Đơn Vị</th>
                                     </tr>
                                     <tr>
-                                        <!-- Số điện thoại -->
-                                        <td><input type="text" value="0915674567"></td>
+                                        <!-- Mã Khách Hàng -->
+                                        <td><input type="text" value="KH08262822"></td>
                                         
                                         <!-- Số tiền -->
-                                        <td><select style="width:100%">
-                                            <option>20,000 VND</option>
-                                            <option>50,000 VND</option>
-                                            <option>100,000 VND</option>
-                                            <option>200,000 VND</option>
-                                            <option>500,000 VND</option>
-                                        </select>
-                                        </td>
-                                        <!-- Nhà cung cấp -->
+                                        <td><input type="text" value="100 000"></td>
+
+                                        <!-- Loại Ví -->
                                         <!-- !IMPORTANT DO NOT REMOVE WHITESPACE BETWEEN <td> and <select> -->
                                         <td><select style="width: 100%; font-size: 12px;">
-                                                <option>Viettel</option>
-                                                <option>Mobifone</option>
-                                                <option>VietnamMobile</option>
-                                                <option>Vinaphone</option>
-                                            </select></td>
+                                                <option>MoMo</option>
+                                                <option>viettel Pay</option>
+                                        </select></td>
+
+                                        <!-- Đơn Vị -->
+                                        <td><select style="width: 100%; font-size: 12px;">
+                                            <option>VND</option>
+                                            <option>USD</option>
+                                            <option>YEN</option>
+                                            <option>AUD</option>
+                                        </select></td>
+                                        
                                     </tr>
 
                                     <tr>
-                                        <!-- Số điện thoại -->
-                                        <td><input type="text" value="0455654567"></td>
+                                        <!-- Mã Khách Hàng -->
+                                        <td><input type="text" value="KH08261712"></td>
                                         
                                         <!-- Số tiền -->
-                                        <td><select style="width:100%">
-                                            <option>20,000 VND</option>
-                                            <option>50,000 VND</option>
-                                            <option>100,000 VND</option>
-                                            <option>200,000 VND</option>
-                                            <option>500,000 VND</option>
-                                        </select>
-                                        </td>
-                                        <!-- Nhà cung cấp -->
+                                        <td><input type="text" value="200 000"></td>
+
+                                        <!-- Loại Ví -->
                                         <!-- !IMPORTANT DO NOT REMOVE WHITESPACE BETWEEN <td> and <select> -->
                                         <td><select style="width: 100%; font-size: 12px;">
-                                                <option>Viettel</option>
-                                                <option>Mobifone</option>
-                                                <option>VietnamMobile</option>
-                                                <option>Vinaphone</option>
-                                            </select></td>
+                                                <option>MoMo</option>
+                                                <option>viettel Pay</option>
+                                        </select></td>
+
+                                        <!-- Đơn Vị -->
+                                        <td><select style="width: 100%; font-size: 12px;">
+                                            <option>VND</option>
+                                            <option>USD</option>
+                                            <option>YEN</option>
+                                            <option>AUD</option>
+                                        </select></td>
+
                                     </tr>
 
                                     <tr>
-                                        <!-- Số điện thoại -->
-                                        <td><input type="text" value="0397758893"></td>
+                                       <!-- Mã Khách Hàng -->
+                                       <td><input type="text" value="KH11717222"></td>
                                         
                                         <!-- Số tiền -->
-                                        <td><select style="width:100%">
-                                            <option>20,000 VND</option>
-                                            <option>50,000 VND</option>
-                                            <option>100,000 VND</option>
-                                            <option>200,000 VND</option>
-                                            <option>500,000 VND</option>
-                                        </select>
-                                        </td>
-                                        <!-- Nhà cung cấp -->
-                                        <!-- !IMPORTANT DO NOT REMOVE WHITESPACE BETWEEN <td> and <select> -->
+                                        <td><input type="text" value="300 000"></td>
+
+                                        <!-- Loại Ví -->
                                         <td><select style="width: 100%; font-size: 12px;">
-                                                <option>Viettel</option>
-                                                <option>Mobifone</option>
-                                                <option>VietnamMobile</option>
-                                                <option>Vinaphone</option>
-                                            </select></td>
+                                                <option>MoMo</option>
+                                                <option>viettel Pay</option>
+                                        </select></td>
+
+                                        <!-- Đơn Vị -->
+                                        <td><select style="width: 100%; font-size: 12px;">
+                                            <option>VND</option>
+                                            <option>USD</option>
+                                            <option>YEN</option>
+                                            <option>AUD</option>
+                                        </select></td>
                                     </tr>
                                 </table>
                             </div>

@@ -2,7 +2,7 @@
 <html>
 	<head>
 		<link rel="stylesheet" type="text/css" href="../css/layout.css">
-		<script src="controllerInputOTP.js"></script>
+		<script src="controllerInpuOTP.js"></script>
 		<meta name="viewport" content = "width=device-width, initial-scale = 1.0">
 	</head>
 
@@ -36,7 +36,7 @@
 					<button class="dropdown-button">Thanh toán</button>
 					<div class="dropdown-content">
 						<a href="#pay1">Thanh toán hóa đơn tiền điện</a>
-						<a href="#pay2">Nộp thuế nội địa</a>
+						<a href="#pay2">Nạp tiền ví điện tử</a>
 						<a href="#pay3">Nạp tiền điện thoại</a>
 					</div>
 				</div>
@@ -68,7 +68,7 @@
 							<button class="card-button">Chuyển khoản ngoài hệ thống</button>
 							<button class="card-button">Nạp tiền điện thoại</button>
 							<button class="card-button">Thanh toán hóa đơn tiền điện</button>
-							<button class="card-button">Nộp thuế nội địa</button>
+							<button class="card-button">Nạp tiền ví điện tử</button>
 						</div>
 					</div>
 				</div>
@@ -78,15 +78,15 @@
                         <h4>Nhập mã OTP</h4>
                         <div class="form" style="text-align: center;">
                             <div class="pagination">
-									<input id="text1" type="text" maxlength="1" size="1" autofocus onkeyup="keyUp(event, 1)">
-									<input id="text2" type="text" maxlength="1" size="1" onkeyup="keyUp(event, 2)">
-									<input id="text3" type="text" maxlength="1" size="1" onkeyup="keyUp(event, 3)">
-									<input id="text4" type="text" maxlength="1" size="1" onkeyup="keyUp(event, 4)">
-									<input id="text5" type="text" maxlength="1" size="1" onkeyup="keyUp(event, 5)">
-									<input id="text6" type="text" maxlength="1" size="1" onkeyup="keyUp(event,6)">
+									<input id="text1" type="text" maxlength="1" size="1" autofocus onkeyup="keyUp(event, 2)">
+									<input id="text2" type="text" maxlength="1" size="1" onkeyup="keyUp(event, 3)">
+									<input id="text3" type="text" maxlength="1" size="1" onkeyup="keyUp(event, 4)">
+									<input id="text4" type="text" maxlength="1" size="1" onkeyup="keyUp(event, 5)">
+									<input id="text5" type="text" maxlength="1" size="1" onkeyup="keyUp(event, 6)">
+									<input id="text6" type="text" maxlength="1" size="1" onkeyup="keyUp(event, 1)">
 							</div>
 
-							<p><b>Mã OTP đã được gửi đến bạn, <span style="color: red;">vui lòng nhập mã trong 60s</span></br>
+							<p><b>Mã OTP đã được gửi đến bạn, <span style="color: #0BF013;">vui lòng nhập mã trong 60s</span></br>
 							Nhấn nút reset để gủi lại mã</b></p>
                             
                             <div class="container-buttons">
