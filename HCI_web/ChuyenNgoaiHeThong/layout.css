@@ -1,0 +1,295 @@
+* {
+	box-sizing: border-box;
+}
+
+.container-main {
+	margin-left: 100px;
+	margin-right: 100px;
+	border: 0.5px solid rgb(165, 165, 165);
+}
+
+.header {
+	width: auto;
+	height: 150px;
+	background-color: rgb(66, 103, 178);
+	position: relative;
+}
+
+.header h1 {
+	position: absolute;	
+	left: 70%;
+	top: 50%;
+	text-align: right;
+	color: white;
+}
+
+.navigation {
+	display: flex;
+	flex-direction: row;
+	background-color: rgba(41, 184, 46);
+	justify-content: left;
+}
+
+.navigation-button {
+	border: none;
+	background-color: rgba(41, 184, 46, 0.74);
+	color: white;
+	border: none;
+	cursor: pointer;
+	font-weight: bold;
+	padding: 10px;
+}
+
+.dropdown-button {
+	border: none;
+	background-color: rgba(41, 184, 46, 0.74);
+	color: white;
+	padding: 20px;
+	border: none;
+	font-weight: bold;
+	cursor: pointer;
+}
+
+.dropdown {
+	position: relative;
+	display: block;
+}
+
+.dropdown-content {
+	display: none;
+	position: absolute;
+	min-width: 240px;
+	background-color: rgb(252, 244, 244);
+	z-index: 1;
+}
+
+.dropdown-content a {
+	display: block;
+	padding: 12px 16px; 
+	text-decoration: none;
+	color: rgb(56, 54, 54);
+}
+
+.dropdown-content a:hover {
+	background-color: rgb(165, 163, 163);
+}
+
+.dropdown:hover .dropdown-button, .navigation-button:hover {
+	background-color: rgb(18, 131, 22);
+}
+
+.dropdown:hover .dropdown-content{
+	display: block;
+}
+
+.container {
+	display: flex;
+	flex-direction: row;
+	justify-content: flex-start;
+	padding: 16px;
+}
+
+.side {
+	display: flex;
+	flex: 20%;
+	flex-direction: column;
+	/* background-color: rgb(155, 153, 153); */
+}
+
+.main {
+	display: flex;
+	flex: 80%;
+	flex-direction: column;
+	justify-content: center;
+	margin-left: 10px;
+	margin-right: 10px;
+	/* background-color: rgb(155, 153, 153); */
+}
+
+.card {
+	/* width: 100%; */
+	border-radius: 18px;
+	background-color: #C4C4C4;
+	margin-top: 10px;
+
+}
+
+.card-header {
+	position: relative;
+	background-color: rgba(37, 121, 41, 0.74);
+	border-top-left-radius: 18px;
+	border-top-right-radius: 18px;
+	/* width: inherit; */
+	height: 42px;
+}
+
+.card-header img {
+	position: absolute;
+	width: 24px;
+	height: 24px;
+	left: 10px;
+	top: 9px;
+}
+
+.card-header h4 {
+	position: absolute;
+	color: white;
+	text-align: center;
+	top: 13px;
+	margin-top: 0;
+	margin-left: 80px;
+	margin-bottom: 0;
+}
+
+.card-body {
+	padding: 8px;
+}
+
+.card-button {
+	min-width: 250px;
+	display: block;
+	border-radius: 10px;
+	margin-top: 10px;
+	background-color: white;
+	background-image: url("../image/arrow-point-to-right.png");
+	background-size: 12px 12px;
+	background-repeat: no-repeat;
+	background-position: 10px;
+	border: none;
+	font-weight: bold;
+	text-align: center;
+	padding: 10px 10px 10px 20px;
+	cursor: pointer;
+}
+
+.card-button:hover {
+	background-color: rgb(218, 216, 216);
+}
+
+.container-form {
+	margin: 10px 10px 10px 10px;
+	background-color: rgba(196, 196, 196, 0.56);
+	border-radius: 18px;
+	padding: 10px;
+	/* height: 602px; */
+}
+
+.container-form h4{
+	margin-top: 20px;
+	background-color: rgba(41, 184, 46, 0.74);
+	border-radius: 18px;
+	padding: 5px;
+	color: white;
+	font-weight: bold;
+	text-align: center;
+	text-transform: uppercase;
+}
+
+.tab {
+	border: 1px solid color;
+}
+
+.tab button {
+	float: left;
+	background-color: #C4C4C4;
+	padding: 5px;
+	color: black;
+	text-align: center;
+	font-weight: bold;
+	/* border-top-left-radius: 18px; */
+	cursor: pointer;
+	width: 387px;
+	outline: none;
+	border: none;
+}
+
+.tab button:hover {
+	background-color: rgb(158, 157, 157);
+}
+
+.tab button.active {
+	background-color: rgba(41, 184, 46, 0.74);
+	color: white;
+}
+
+.tab-content {
+	background-color: #c4c4c4;
+	border-radius: 18px;
+	padding: 10px
+}
+
+.tab-content h3 {
+	color: #0EAB1D;
+}
+
+.form {
+	background-color: #FFFFFF;
+	border-radius: 10px;
+	padding: 10px;
+}
+
+.form-field {
+	/* background-color: #c4c4c4; */
+	margin: 10px;
+}
+
+.form-field p{
+	font-weight: bold;
+	display: inline;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.form-field input {
+	border-radius: 50px;
+	padding-left: 10px;
+}
+
+.form-field textarea {
+	width: 250px;
+	height: 50px;
+}
+
+#acount-balance {
+	color: blue;
+	font-weight: bold;
+}
+
+.combobox {
+	border-radius: 5px;
+}
+
+.button-submit {
+	float: left;
+	border-radius: 18px;
+	width: 104px;
+	height: 46px;
+	background-color:  rgba(41, 184, 46, 0.74);
+	color: white;
+	outline: none;
+}
+
+.input-otp {
+	border-radius: 18px;
+	border: 2px solid black;
+	width: 384px;
+	height: 34px;
+	text-align: center;
+}
+
+.table-input-data {
+	width: 100px;
+}
+
+.container-table {
+	width: 734px;
+	height: 200px;
+	overflow: scroll;
+}
+
+.table-transfer, th, td {
+	border: 1px solid black;
+	border-collapse: collapse;
+	margin-left:auto;
+	margin-right: auto;
+}

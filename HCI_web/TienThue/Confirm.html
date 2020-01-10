@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="stylesheet" type="text/css" href="../css/layout.css">
+    <link href="https://fonts.googleapis.com/css?family=Noto+Sans&display=swap" rel="stylesheet">
+    <script src="controllerConfirm.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.8.0/jszip.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.8.0/xlsx.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale = 1.0">
+</head>
+
+<body onload="onConfirmLoad()">
+    <div class="container-main">
+        <div class="header">
+            <h1>ABC E-Banking</h1>
+        </div>
+
+        <!-- Navigation -->
+        <div class="navigation">
+            <!-- HOME -->
+            <button class="navigation-button">
+                <img src="../image/home.png" alt="home" style="width: 32; height: 32;">
+            </button>
+
+            <!-- Thông tin tài khoản -->
+            <button class="navigation-button">Thông tin tài khoản</button>
+
+            <!-- Chuyển tiền  -->
+            <div class="dropdown">
+                <button class="dropdown-button">Chuyển tiền</button>
+                <div class="dropdown-content">
+                    <a href="#transfer1">Chuyển tiền ngoài hệ thống</a>
+                    <a href="#transfer2">Chuyển tiền trong hệ thống</a>
+                </div>
+            </div>
+
+            <!-- Thanh toán -->
+            <div class="dropdown">
+                <button class="dropdown-button">Thanh toán</button>
+                <div class="dropdown-content">
+                    <a href="#pay1">Thanh toán hóa đơn tiền điện</a>
+                    <a href="#pay2">Nộp thuế nội địa</a>
+                    <a href="#pay3">Nạp tiền điện thoại</a>
+                </div>
+            </div>
+        </div>
+
+
+        <!-- Main -->
+        <div class="container">
+            <div class="side">
+                <!-- my account -->
+                <div class="card">
+                    <div class="card-header">
+                        <img src="../image/user (1).png" alt="user">
+                        <h4>My E-banking</h4>
+                    </div>
+                    <div class="card-body">
+                        <button class="card-button">Thông tin tài khoản</button>
+                        <button class="card-button">Đổi mật khẩu</button>
+                        <button class="card-button">Đăng xuất</button>
+                    </div>
+                </div>
+
+                <!-- quick access -->
+                <div class="card" style="margin-top: 15px;">
+                    <div class="card-header">
+                        <img src="../image/key.png" alt="key">
+                        <h4>Truy cập nhanh</h4>
+                    </div>
+                    <div class="card-body">
+                        <button class="card-button">Chuyển khoản trong hệ thống</button>
+                        <button class="card-button">Chuyển khoản ngoài hệ thống</button>
+                        <button class="card-button">Nạp tiền điện thoại</button>
+                        <button class="card-button">Thanh toán hóa đơn tiền điện</button>
+                        <button class="card-button">Nộp thuế nội địa</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="main">
+                <div class="container-form">
+                    <h4>Tiền Thuế</h4>
+
+                    <div class="tab-content">
+                        <h3 style="margin-top: 8.720px;">Thông tin người chuyển</h3>
+                        <div class="form">
+                            <!-- Số tài khoản người chuyển -->
+                            <div class="form-field" style="margin-top: 3px;">
+                                <p style="margin-left: 251.323px;">Số tài khoản</p>
+                                <p id="account-id" style="margin-left: 10px;"></p>
+                            </div>
+
+                            <!-- Số dư tài khoản chuyển -->
+                            <div class="form-field">
+                                <p style="margin-left: 242.183px;">Số dư hiện tại</p>
+                                <p style="margin-left: 10px;" id="account-balance"></p>
+                            </div>
+                        </div>
+
+
+                        <h3>Thông tin giao dịch</h3>
+                        <div class="form">
+                            <!--Nhà cung cấp -->
+                            <div class="form-field" style="margin-top: 3px;">
+                                <p style="margin-left: 252.344px;">Mã Số Thuế</p>
+                                <p id="id-tax" style="margin-left: 10px;"></p>
+                            </div>
+
+                            <!-- Mã khách hàng -->
+                            <div class="form-field">
+                                <p style="margin-left: 230px;">Mã khách hàng</p>
+                                <p id="customer-id" style="margin-left: 10px;"></p>
+                            </div>
+
+                            <div class="form-field">
+                                <p style="margin-left: 191.503px;">Hình thức nhận OTP</p>
+                                <select class="combobox" style="margin-left:10px;">
+                                    <option>SMART-OTP</option>
+                                    <option>SMS-OTP</option>
+                                </select>
+                            </div>
+
+                            <div id="list-bill" class="list-container" style="visibility: visible;">
+                                
+                            </div>
+
+                            <div class="form-field">
+                                <p style="margin-left: 253.123px;">Tổng số tiền</p>
+                                <p id="sum-money" style="margin-left: 10px; color: red;"></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="container-buttons">
+                        <button class="button-submit" onClick="onBackButtonClick(event)">Quay lại</button>
+                        <button style="margin-left: 10px;" class="button-submit"
+                            onClick="onContinueButtonClick(event)">Tiếp tục</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>
