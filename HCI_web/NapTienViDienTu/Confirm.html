@@ -4,75 +4,76 @@
 <head>
     <link rel="stylesheet" type="text/css" href="../css/layout.css">
     <script src="controllerConfirm.js"></script>
+    <script src="../menu_controller.js"></script>
     <meta name="viewport" content="width=device-width, initial-scale = 1.0">
 </head>
 
 <body onload="onConfirmLoad()">
     <div class="container-main">
-        <div class="header">
-            <h1>ABC E-Banking</h1>
-        </div>
+		<div class="header">
+			<h1>ABC E-Banking</h1>
+		</div>
 
-        <!-- Navigation -->
-        <div class="navigation">
-            <!-- HOME -->
-            <button class="navigation-button">
-                <img src="../image/home.png" alt="home" style="width: 32; height: 32;">
-            </button>
+		<!-- Navigation -->
+		<div class="navigation">
+			<!-- HOME -->
+			<button class="navigation-button">
+				<img src="../image/home.png" alt="home" style="width: 32; height: 32;">
+			</button>
 
-            <!-- Thông tin tài khoản -->
-            <button class="navigation-button">Thông tin tài khoản</button>
+			<!-- Thông tin tài khoản -->
+			<button class="navigation-button">Thông tin tài khoản</button>
 
-            <!-- Chuyển tiền  -->
-            <div class="dropdown">
-                <button class="dropdown-button">Chuyển tiền</button>
-                <div class="dropdown-content">
-                    <a href="#transfer1">Chuyển tiền ngoài hệ thống</a>
-                    <a href="#transfer2">Chuyển tiền trong hệ thống</a>
-                </div>
-            </div>
+			<!-- Chuyển tiền  -->
+			<div class="dropdown">
+				<button class="dropdown-button">Chuyển tiền</button>
+				<div class="dropdown-content">
+                    <a href="#transfer1" onClick="onTransferInsideClick()">Chuyển tiền ngoài hệ thống</a>
+                    <a href="#transfer2" onClick="onTransferOutsideClick()">Chuyển tiền trong hệ thống</a>
+				</div>
+			</div>
 
-            <!-- Thanh toán -->
-            <div class="dropdown">
-                <button class="dropdown-button">Thanh toán</button>
-                <div class="dropdown-content">
-                    <a href="#pay1">Thanh toán hóa đơn tiền điện</a>
-                    <a href="#pay2">Nạp tiền ví điện tử</a>
-                    <a href="#pay3">Nạp tiền điện thoại</a>
-                </div>
-            </div>
-        </div>
+			<!-- Thanh toán -->
+			<div class="dropdown">
+				<button class="dropdown-button">Thanh toán</button>
+				<div class="dropdown-content">
+					<a href="#pay1" onClick="onPayPhoneBillClick()">Thanh toán hóa đơn tiền điện</a>
+					<a href="#pay2" onClick="onPayElectricWalletClick()">Nạp tiền ví điện tử</a>
+					<a href="#pay3" onClick="onPayPhoneBillClick()">Nạp tiền điện thoại</a>
+				</div>
+			</div>
+		</div>
 
-        <div class="container">
-            <div class="side">
-                <!-- my account -->
-                <div class="card">
-                    <div class="card-header">
-                        <img src="../image/user (1).png" alt="user">
-                        <h4>My E-banking</h4>
-                    </div>
-                    <div class="card-body">
-                        <button class="card-button">Thông tin tài khoản</button>
-                        <button class="card-button">Đổi mật khẩu</button>
-                        <button class="card-button">Đăng xuất</button>
-                    </div>
-                </div>
+		<div class="container">
+			<div class="side">
+				<!-- my account -->
+				<div class="card">
+					<div class="card-header">
+						<img src="../image/user (1).png" alt="user">
+						<h4>My E-banking</h4>
+					</div>
+					<div class="card-body">
+						<button class="card-button">Thông tin tài khoản</button>
+						<button class="card-button">Đổi mật khẩu</button>
+						<button class="card-button">Đăng xuất</button>
+					</div>
+				</div>
 
-                <!-- quick access -->
-                <div class="card" style="margin-top: 15px;">
-                    <div class="card-header">
-                        <img src="../image/key.png" alt="key">
-                        <h4>Truy cập nhanh</h4>
-                    </div>
-                    <div class="card-body">
-                        <button class="card-button">Chuyển khoản trong hệ thống</button>
-                        <button class="card-button">Chuyển khoản ngoài hệ thống</button>
-                        <button class="card-button">Nạp tiền điện thoại</button>
-                        <button class="card-button">Thanh toán hóa đơn tiền điện</button>
-                        <button class="card-button">Nạp tiền ví điện tử</button>
-                    </div>
-                </div>
-            </div>
+				<!-- quick access -->
+				<div class="card" style="margin-top: 15px;">
+					<div class="card-header">
+						<img src="../image/key.png" alt="key">
+						<h4>Truy cập nhanh</h4>
+					</div>
+					<div class="card-body">
+						<button class="card-button" onClick="onTransferInsideClick()">Chuyển khoản trong hệ thống</button>
+						<button class="card-button" onClick="onTransferOutsideClick()">Chuyển khoản ngoài hệ thống</button>
+						<button class="card-button" onClick="onPayPhoneBillClick()">Nạp tiền điện thoại</button>
+						<button class="card-button" onClick="onPayElectricBillClick()">Thanh toán hóa đơn tiền điện</button>
+						<button class="card-button" onClick="onPayElectricWalletClick()">Nạp tiền ví điện tử</button>
+					</div>
+				</div>
+			</div>
 
             <div class="main">
                 <div class="container-form">

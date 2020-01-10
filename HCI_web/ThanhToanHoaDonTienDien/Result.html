@@ -3,6 +3,7 @@
 	<head>
 		<link rel="stylesheet" type="text/css" href="../css/layout.css">
 		<script src="controllerResult.js"></script>
+		<script src="../menu_controller.js"></script>
 		<meta name="viewport" content = "width=device-width, initial-scale = 1.0">
 	</head>
 
@@ -26,8 +27,8 @@
 				<div class="dropdown">
 					<button class="dropdown-button">Chuyển tiền</button>
 					<div class="dropdown-content">
-						<a href="#transfer1">Chuyển tiền ngoài hệ thống</a>
-						<a href="#transfer2">Chuyển tiền trong hệ thống</a>
+						<a href="#transfer1" onClick="onTransferInsideClick()">Chuyển tiền ngoài hệ thống</a>
+						<a href="#transfer2" onClick="onTransferOutsideClick()">Chuyển tiền trong hệ thống</a>
 					</div>
 				</div>
 	
@@ -64,11 +65,11 @@
 								<h4>Truy cập nhanh</h4>
 						</div>
 						<div class="card-body">
-							<button class="card-button">Chuyển khoản trong hệ thống</button>
-							<button class="card-button">Chuyển khoản ngoài hệ thống</button>
-							<button class="card-button">Nạp tiền điện thoại</button>
-							<button class="card-button">Thanh toán hóa đơn tiền điện</button>
-							<button class="card-button">Nạp tiền ví điện tử</button>
+							<button class="card-button" onClick="onTransferInsideClick()">Chuyển khoản trong hệ thống</button>
+							<button class="card-button" onClick="onTransferOutsideClick()">Chuyển khoản ngoài hệ thống</button>
+							<button class="card-button" onClick="onPayPhoneBillClick()">Nạp tiền điện thoại</button>
+							<button class="card-button" onClick="onPayElectricBillClick()">Thanh toán hóa đơn tiền điện</button>
+							<button class="card-button" onClick="onPayElectricWalletClick()">Nạp tiền ví điện tử</button>
 						</div>
 					</div>
 				</div>
