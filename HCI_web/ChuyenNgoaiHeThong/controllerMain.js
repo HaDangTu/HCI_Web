@@ -244,7 +244,7 @@ function onChooseFileChange(){
             
             var cellContent = row.insertCell(5);
             // cellContent.className = 'table-data2'
-            cellContent.innerHTML = '<textarea style ="width: 200px;">' + element.NoiDungChuyen + '</textarea>';
+            cellContent.innerHTML = '<input type="text" value="' + element.NoiDungChuyen + '">';
 
             var cellUnit = row.insertCell(6);
             // cellUnit.className = 'table-data1'
